@@ -11395,11 +11395,11 @@ class TranslationConfig(_common.BaseModel):
 
   echo_target_language: Optional[bool] = Field(
       default=None,
-      description="""Optional. If true, the model will generate audio when the target language is spoken, essentially it will parrot the input. If false, we will not produce audio for the target language.""",
+      description="""If true, the model will generate audio when the target language is spoken, essentially it will parrot the input. If false, we will not produce audio for the target language.""",
   )
   target_language_code: Optional[str] = Field(
       default=None,
-      description="""Required. The target language for translation. Supported values are BCP-47 language codes (e.g. "en", "es", "fr").""",
+      description="""The target language for translation. Supported values are BCP-47 language codes (e.g. "en", "es", "fr").""",
   )
 
 
@@ -11407,10 +11407,10 @@ class TranslationConfigDict(TypedDict, total=False):
   """Config for stream translation."""
 
   echo_target_language: Optional[bool]
-  """Optional. If true, the model will generate audio when the target language is spoken, essentially it will parrot the input. If false, we will not produce audio for the target language."""
+  """If true, the model will generate audio when the target language is spoken, essentially it will parrot the input. If false, we will not produce audio for the target language."""
 
   target_language_code: Optional[str]
-  """Required. The target language for translation. Supported values are BCP-47 language codes (e.g. "en", "es", "fr")."""
+  """The target language for translation. Supported values are BCP-47 language codes (e.g. "en", "es", "fr")."""
 
 
 TranslationConfigOrDict = Union[TranslationConfig, TranslationConfigDict]

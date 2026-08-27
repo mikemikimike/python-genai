@@ -1154,9 +1154,10 @@ def _LiveConnectConfig_to_vertex(
     )
 
   if getv(from_object, ['translation_config']) is not None:
-    raise ValueError(
-        'translation_config parameter is only supported in Gemini Developer API'
-        ' mode, not in Gemini Enterprise Agent Platform mode.'
+    setv(
+        parent_object,
+        ['setup', 'generationConfig', 'translationConfig'],
+        getv(from_object, ['translation_config']),
     )
 
   return to_object
